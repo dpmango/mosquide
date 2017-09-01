@@ -67,8 +67,8 @@ gulp.task('sass', function() {
     }))
     .on('error', config.errorHandler)
     .pipe(postcss(processors))
-    .pipe(sourcemaps.write('.'))
     .pipe(config.production ? postcss([cssnano(cssNanoParams)]) : util.noop())
+    .pipe(sourcemaps.write('.'))
     .pipe(plumber({
       errorHandler: config.errorHandler
     }))
