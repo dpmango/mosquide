@@ -41,52 +41,32 @@ $(document).ready(function(){
         return false;
 	});
 
-  // HEADER SCROLL
-  // add .header-static for .page or body
-  // to disable sticky header
-  if ( $('.header-static').length == 0 ){
-    _window.scrolled(10, function() { // scrolled is a constructor for scroll delay listener
-      var vScroll = _window.scrollTop();
-      var header = $('.header').not('.header--static');
-      var headerHeight = header.height();
-      var heroHeight = $('.hero').outerHeight() - headerHeight;
-
-      if ( vScroll > headerHeight ){
-        header.addClass('header--transformed');
-      } else {
-        header.removeClass('header--transformed');
-      }
-
-      if ( vScroll > heroHeight ){
-        header.addClass('header--fixed');
-      } else {
-        header.removeClass('header--fixed');
-      }
-    });
+  // PRELOADER
+  function setSvgStroke(el){
+    var pathLen = el.get(0).getTotalLength().toFixed();
+    el.attr('stroke-dasharray', pathLen);
+    el.attr('stroke-dashoffset', pathLen);
   }
+
+  // setSvgStroke($('#logoStar'));
+
+  setTimeout(function(){
+    $('.preloader').addClass('show-letters')
+  }, 4000)
+
+  setTimeout(function(){
+    $('.preloader').addClass('remove-fade')
+  }, 5000)
+
+  setTimeout(function(){
+    $('.preloader').addClass('remove-loader')
+  }, 6500)
+
 
   // HAMBURGER TOGGLER
   $('.hamburger').on('click', function(){
     $('.hamburger').toggleClass('active');
     $('.mobile-navi').toggleClass('active');
-  });
-
-  // SET ACTIVE CLASS IN HEADER
-  // * could be removed in production and server side rendering
-  // user .active for li instead
-  $('.header__menu li').each(function(i,val){
-    if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
-      $(val).addClass('active');
-    } else {
-      $(val).removeClass('active')
-    }
-  });
-
-
-  // VIDEO PLAY
-  $('.promo-video .icon').on('click', function(){
-    $(this).closest('.promo-video').toggleClass('playing');
-    $(this).closest('.promo-video').find('iframe').attr("src", $("iframe").attr("src").replace("autoplay=0", "autoplay=1"));
   });
 
 
