@@ -1,4 +1,35 @@
 // INDEX
 
+.preloader
+  position: fixed 0
+  z-index: 1001
+  display: flex
+  flex-direction: column
+  &__wrapper
+    flex: 1 1 auto
+    position: relative
+    display: flex
+    flex-direction: column
+  &__bg
+    position: absolute 0
+    background: url('../img/preloader.jpg') no-repeat bottom center
+    background-size: cover
+    z-index: 1
+    &::after
+      display: inline-block
+      content: ' '
+      position: absolute 0
+      background: rgba(black, .6)
+      backdrop-filter: blur(9px)
+      z-index: 2
+  &__logo
+    position: relative
+    z-index: 3
+    margin: auto
+    text-align: center
+    .ico
+      fill: white
+      font-size: 90px
+
 .hello
   display: none
