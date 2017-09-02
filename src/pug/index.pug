@@ -24,44 +24,86 @@ block content
   // CONTENT
   .content
     .sidebar
-      .sidebar__wrapper
+      .sidebar__main
         .sidebar__lang
-          a(href="#").active Ru
-          a(href="#") En
+          a(href="#") Ru
+          a(href="#").active En
           a(href="#") Cn
         .sidebar__content
           .sidebar__category
-            a.sidebar__link(href="#")
+            a.sidebar__link(data-panel='places')
               +icon('ico-places')
               span Places
-            a.sidebar__link(href="#")
+              +icon('ico-more')
+            a.sidebar__link(data-panel='food')
               +icon('ico-fooddrink')
               span Food & Drinks
-            a.sidebar__link(href="#")
+              +icon('ico-more')
+            a.sidebar__link(data-panel='shopping')
               +icon('ico-shopping')
               span Shopping
           // next category
           .sidebar__category
-            a.sidebar__link(href="#")
+            a.sidebar__link(data-panel='metro')
               +icon('ico-metro')
               span Metro map
-            a.sidebar__link(href="#")
+            a.sidebar__link(data-panel='info')
               +icon('ico-info')
               span Important information
               // next category
           .sidebar__category
-            a.sidebar__link(href="#")
+            a.sidebar__link(data-panel='favorites')
               +icon('ico-heart')
               span Favorites
-
+              
+    // Panels
+    .sidebar__panel(data-for="places")
+      .sidebar__back
+        +icon('ico-back-arrow')
+      .sidebar__filters
+        .sidebar__filter.active
+          .sidebar__filter-ico
+            +icon('ico-placemark')
+          span Все
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-places')
+          span Достопримечательности
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-museum')
+          span Музеи
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-parks')
+          span парки
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-memorial')
+          span Памятники
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-entertainment')
+          span Развлечения
+    // next
+    .sidebar__panel(data-for="food")
+      .sidebar__back
+        +icon('ico-back-arrow')
+      .sidebar__filters
+        .sidebar__filter.active
+          .sidebar__filter-ico
+            +icon('ico-placemark')
+          span Все
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-places')
+          span Достопримечательности
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-museum')
+          span Музеи
+            
           
     .map
       script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAc-HQqbjl4xbBI-ep3pMskf9ic-lyMb70')
       #google-map
-
-  // iteration example
-  //- .socials
-  //-   - var socials = ['email']
-  //-     each social in socials
-  //-       a(class="social-share" href="#" role="button")
-  //-         +icon('ico-'+social)

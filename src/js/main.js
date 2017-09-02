@@ -69,6 +69,20 @@ $(document).ready(function(){
     $('.mobile-navi').toggleClass('active');
   });
 
+  // sidebar pannel toggler
+  $('.sidebar__link').on('click', function(){
+    var panel = $(this).data('panel');
+    if( $('.sidebar__panel[data-for='+panel+']').length > 0 ){
+      $(this).siblings().removeClass('active')
+      $(this).toggleClass('active');
+      $('.sidebar__panel[data-for='+panel+']').toggleClass('active')
+    }
+  });
+
+  $('.sidebar__back').on('click', function(){
+    $('.sidebar__panel').removeClass('active');
+    $('.sidebar__link').removeClass('active');
+  })
 
   //////////
   // SLIDERS

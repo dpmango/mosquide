@@ -7,16 +7,15 @@
   top: 0
   bottom: 0
   left: 0
-  width: 400px
-  background: white
-  box-shadow: 0px 0px 11px 0px rgba(black, .2)
-
-  &__wrapper
+  &__main
     position: relative
     flex: 1
     display: flex
     flex-direction: column
     padding: 120px 20px 0 20px
+    width: 400px
+    background: white
+    box-shadow: 0px 0px 11px 0px rgba(black, .2)
 
   &__lang
     text-align: center
@@ -73,14 +72,91 @@
     font-size: 24px
     color: $fontColor70
     padding: 5px
-
+    cursor: pointer
     transition: color $transitionSpeed $ease
-    .ico
+    .ico:first-child
       flex: 0 0 50px
       font-size: 16px
       transition: all $transitionSpeed $ease
       &-metro
         fill: #E1141A
         font-size: 12px
-    &:hover
+    span
+      display: inline-block
+    .ico:last-child
+      opacity: 0
+      transform: translate3d(25px,0,0)
+      font-size: 5px
+      transition: all $transitionSpeed $ease
+    &:hover, &.active
       color: $colorRed
+      .ico:last-child
+        opacity: 1
+        transform: translate3d(15px,0,0)
+
+  &__panel
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: fixed
+    z-index: 8
+    top: 0
+    bottom: 0
+    left: 400px
+    width: 170px
+    background: white
+    box-shadow: none
+    transform: translate3d(-100%,0,0)
+    pointer-events: none
+    transition: transform $transitionSpeed $ease, box-shadow $transitionSpeed $ease
+    &.active
+      pointer-events: all
+      transform: translate3d(0,0,0)
+      box-shadow: 0px 0px 11px 0px rgba(black, .2)
+  &__filters
+    flex: 0 0 auto
+    margin: 0 20px auto 20px
+    display: flex
+    flex-direction: column
+  &__filter
+    text-align: center
+    padding: 5px
+    margin-bottom: 2vh
+    cursor: pointer
+    &-ico
+      width: 34px
+      height: 34px
+      margin-left: auto
+      margin-right: auto
+      background: white
+      color: $colorRed
+      box-shadow: 0px 0px 10px rgba(#000000, .2)
+      border-radius: 50%
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: all $transitionSpeed $ease
+    span
+      display: inline-block
+      font-size: 10px
+      margin-top: 4px
+      max-width: 64px
+      word-wrap: break-word
+      overflow: hidden
+    &:hover, &.active
+      .sidebar__filter-ico
+        color: white
+        background: $colorRed
+        box-shadow: 0px 0px 10px rgba(#640000, .1)
+      span
+        color: $colorRed
+  &__back
+    font-size: 19px
+    padding: 10px
+    cursor: pointer
+    margin-top: auto
+    margin-bottom: 50px
+    &:hover
+      .ico
+        color: $colorRed
