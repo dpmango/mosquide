@@ -76,13 +76,24 @@ $(document).ready(function(){
       $('.sidebar__link').removeClass('active')
       $(this).toggleClass('active');
       $('.sidebar-panel').removeClass('active');
-      $('.sidebar-panel[data-for='+panel+']').toggleClass('active')
+      $('.sidebar-panel[data-for='+panel+']').toggleClass('active');
+      window.location.hash = panel
     }
   });
+
+  // hash nav
+  if(window.location.hash) {
+    var hash = window.location.hash.substring(1);
+    $('.sidebar__link').removeClass('active')
+    $('.sidebar__link[data-panel='+hash+']').addClass('active');
+    $('.sidebar-panel').removeClass('active');
+    $('.sidebar-panel[data-for='+hash+']').toggleClass('active');
+  }
 
   $('.sidebar__back').on('click', function(){
     $('.sidebar-panel').removeClass('active');
     $('.sidebar__link').removeClass('active');
+    window.location.hash = ""
   })
 
   //////////
