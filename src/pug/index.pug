@@ -57,7 +57,7 @@ block content
               span Favorites
               
     // Panels
-    .sidebar__panel(data-for="places")
+    .sidebar-panel(data-for="places")
       .sidebar__back
         +icon('ico-back-arrow')
       .sidebar__filters
@@ -86,7 +86,7 @@ block content
             +icon('ico-entertainment')
           span Развлечения
     // next
-    .sidebar__panel(data-for="food")
+    .sidebar-panel(data-for="food")
       .sidebar__back
         +icon('ico-back-arrow')
       .sidebar__filters
@@ -102,7 +102,28 @@ block content
           .sidebar__filter-ico
             +icon('ico-museum')
           span Музеи
-            
+    // next
+    .sidebar-panel.sidebar-panel--wider(data-for="info")
+      .sidebar-panel__heading Важная информация
+      .info
+        .info__left
+          +icon('ico-phone')
+        .info__right
+          .info__row
+            +icon('ico-fire')
+            span 101 - Пожарная охрана
+          .info__row
+            +icon('ico-police')
+            span 102 - Полиция
+          .info__row
+            +icon('ico-hospital')
+            span 103 - Скорая помощь
+      .info-text
+        p Москва – современный светский европейский город, в котором нет никаких жестких правил общественного поведения. Впрочем, москвичи немного консервативны, и публичная и бурная демонстрация своих политических или религиозных взглядов, а также сексуальной ориентации может быть воспринята окружающими нео­до­брительно. В Москве запрещено употреблять алкоголь в общественных местах, полиция за этим строго следит, и никакие бумажные пакеты в качестве маскировки для бутылки в расчет не принимаются. 
+      .info-text
+        +icon('ico-no-smoking')
+        p Курение запрещено вблизи станций метро, школ, больниц, на стадионах, в любом помещении, кроме собственной квартиры. Кроме того, не курят в кафе и ресторанах.
+
           
     .map
       script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAc-HQqbjl4xbBI-ep3pMskf9ic-lyMb70')

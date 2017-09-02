@@ -94,26 +94,6 @@
         opacity: 1
         transform: translate3d(15px,0,0)
 
-  &__panel
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    position: fixed
-    z-index: 8
-    top: 0
-    bottom: 0
-    left: 400px
-    width: 170px
-    background: white
-    box-shadow: none
-    transform: translate3d(-100%,0,0)
-    pointer-events: none
-    transition: transform $transitionSpeed $ease, box-shadow $transitionSpeed $ease
-    &.active
-      pointer-events: all
-      transform: translate3d(0,0,0)
-      box-shadow: 0px 0px 11px 0px rgba(black, .2)
   &__filters
     flex: 0 0 auto
     margin: 0 20px auto 20px
@@ -160,3 +140,30 @@
     &:hover
       .ico
         color: $colorRed
+
+.sidebar-panel
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  position: fixed
+  z-index: 8
+  top: 0
+  bottom: 0
+  left: 400px
+  width: 170px
+  background: white
+  box-shadow: none
+  transform: translate3d(-100%,0,0)
+  pointer-events: none
+  transition: transform $transitionSpeed $ease, box-shadow $transitionSpeed $ease
+  &--wider
+    width: 375px
+    padding: 20px 40px
+  &.active
+    pointer-events: all
+    transform: translate3d(0,0,0)
+    box-shadow: 0px 0px 11px 0px rgba(black, .2)
+  &__heading
+    font-size: 24px
+    font-weight: 700

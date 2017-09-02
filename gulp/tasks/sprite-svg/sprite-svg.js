@@ -61,6 +61,7 @@ gulp.task('sprite:svg', function() {
     .pipe(gCheerio({
         run: function($, file) {
             $('[fill]:not([fill="currentColor"])').removeAttr('fill');
+            $('[fill-opacity]').removeAttr('fill-opacity');
             $('[stroke]').removeAttr('stroke');
             $('[style]').removeAttr('style');
         },
