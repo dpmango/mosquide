@@ -151,6 +151,67 @@ $(document).ready(function(){
   $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
 
 
+  // panzoom
+  $(".panzoom").panzoom({
+    eventNamespace: ".panzoom",
+    transition: true,
+    cursor: "move",
+    disablePan: false,
+    disableZoom: false,
+    disableXAxis: false,
+    disableYAxis: false,
+    which: 1, // left (1), middle (2), or right click (3)
+    increment: 0.3,
+
+    // When no scale is passed, this option tells
+    // the `zoom` method to increment
+    // the scale *linearly* based on the increment option.
+    // This often ends up looking like very little happened at larger zoom levels.
+    // The default is to multiply/divide the scale based on the increment.
+    linearZoom: false,
+
+    // Pan only when the scale is greater than minScale
+    panOnlyWhenZoomed: false,
+
+    // min and max zoom scales
+    minScale: 1,
+    maxScale: 3.5,
+
+    // The default step for the range input
+    // Precendence: default < HTML attribute < option setting
+    rangeStep: 0.05,
+
+    duration: 400,
+    easing: "ease-in-out",
+
+    // Indicate that the element should be contained within its parent when panning
+    // Note: this does not affect zooming outside of the parent
+    // Set this value to 'invert' to only allow panning outside of the parent element (the opposite of the normal use of contain)
+    // 'invert' is useful for a large Panzoom element where you don't want to show anything behind it
+    contain: 'invert',
+
+    // Transform value to which to always reset (string)
+    // Defaults to the original transform on the element when Panzoom is initialized
+    startTransform: undefined,
+
+    // Zoom buttons/links collection (you can also bind these yourself - e.g. `$button.on("click", function( e ) { e.preventDefault(); $elem.panzoom("zoom"); });` )
+    $zoomIn: $('.js-zoom-in'),
+    $zoomOut: $('.js-zoom-out'),
+    // Range input on which to bind zooming functionality
+    $zoomRange: $('.js-zoom-range'),
+    // Reset buttons/links collection on which to bind the reset method
+    $reset: $('.js-reset'),
+    // For convenience, these options will be bound to Panzoom events
+    // These can all be bound normally on the Panzoom element
+    // e.g. `$elem.on("panzoomend", function( e, panzoom ) { console.log( panzoom.getMatrix() ); });`
+    onStart: undefined,
+    onChange: undefined,
+    onZoom: undefined,
+    onPan: undefined,
+    onEnd: undefined,
+    onReset: undefined
+  }).panzoom("zoom");
+
 });
 
 // Show preloader only once
