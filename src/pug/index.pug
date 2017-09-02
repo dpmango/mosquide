@@ -123,8 +123,10 @@ block content
       .info-text
         +icon('ico-no-smoking')
         p Курение запрещено вблизи станций метро, школ, больниц, на стадионах, в любом помещении, кроме собственной квартиры. Кроме того, не курят в кафе и ресторанах.
-
-          
+    
+    // next
+    .sidebar-panel.sidebar-panel--full(data-for="metro")
+      include metro.svg
     .map
       script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAc-HQqbjl4xbBI-ep3pMskf9ic-lyMb70')
       #google-map

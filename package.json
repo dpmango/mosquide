@@ -13,7 +13,7 @@
     "scripts": {
       "pre-push": "surge --project ./dist --domain mosguide.surge.sh"
     }
-  }
+  },
   "author": "Sergey Khmelevskoy <sergey@khmelevskoy.co>",
   "license": "ISC",
   "dependencies": {
