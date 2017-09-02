@@ -2,9 +2,10 @@
 
 .preloader
   position: fixed 0
-  z-index: 1001
+  z-index: 100
   display: flex
   flex-direction: column
+  pointer-events: none
   &__wrapper
     flex: 1 1 auto
     position: relative
@@ -36,58 +37,84 @@
       background: linear-gradient(to top, rgba(white,.99), rgba(white,0))
       opacity: 0
       transition: all 1.5s ease
-  &__logo
-    z-index: 3
-    margin: auto
-    text-align: center
-    svg
-      height: 1em
-      font-size: 90px
-      transform: translate3d(123px,0,0)
-      transition: transform .35s ease-in
+
+.draw-star
+  .logo
     #logoStar
-      fill: white
-      stroke: white
-      fill-opacity: 0
-      stroke-miterlimit: 5
-      // to be set thorugh js
-      stroke-dasharray: 300
-      stroke-dashoffset: 300
-      transition: fill .5s ease-in-out
+      animation-timing-function: ease-in-out
+      animation-fill-mode: forwards
+      animation-iteration: 1
+      animation-name: DrawLine, FadeStroke, FillIn
+      animation-duration: 2s, 1s, 1s
+      animation-delay: 0s, 3s, 2.5s
+.show-letters
+  .logo
+    svg
+      transform: translate3d(0,0,0)
     #logoLetters
-      fill: white
-      fill-opacity: 0
-      transition: fill .5s ease-in-out
-  &.draw-star
-    .preloader__logo
-      #logoStar
-        animation-timing-function: ease-in-out
-        animation-fill-mode: forwards
-        animation-iteration: 1
-        animation-name: DrawLine, FadeStroke, FillIn
-        animation-duration: 2s, 1s, 1s
-        animation-delay: 0s, 3s, 2.5s
-  &.show-letters
-    .preloader__logo
-      svg
-        transform: translate3d(0,0,0)
-      #logoLetters
-        animation: FillIn .8s ease-in-out
-        animation-fill-mode: forwards
-  &.remove-fade
-    .preloader__bg
-      &::after
-        background: transparent
-        backdrop-filter: blur(0px)
-      &::before
-        opacity: 1
-    .preloader__logo
-      #logoStar, #logoLetters
-        fill: $primaryColor
-  &.remove-loader
-    .preloader__bg
-      transform: translate3d(0,-100%,0)
-      pointer-events: none
+      animation: FillIn .8s ease-in-out
+      animation-fill-mode: forwards
+.remove-fade
+  .preloader__bg
+    &::after
+      background: transparent
+      backdrop-filter: blur(0px)
+    &::before
+      opacity: 1
+  .logo
+    #logoStar, #logoLetters
+      fill: $primaryColor
+.remove-loader
+  .preloader__bg
+    transform: translate3d(0,-100%,0)
+    pointer-events: none
+  .logo
+    left: 0
+    top: 0
+    transform: translate3d(0,0,0) scale(.65)
+
+.no-loader
+  .logo
+    left: 0
+    top: 0
+    transform: translate3d(0,0,0) scale(.65)
+    transition: none
+    svg
+      transform: translate3d(0,0,0)
+    #logoStar, #logoLetters
+      animation: none
+      fill: $primaryColor
+      fill-opacity: 1
+      stroke-dasharray: 0
+      stroke-dashoffset: 0
+
+.logo
+  position: fixed
+  left: 50%
+  top: 50%
+  transform: translate3d(-50%,-50%,0)
+  z-index: 101
+  margin: auto
+  text-align: center
+  transition: all .8s ease
+  svg
+    height: 1em
+    font-size: 90px
+    transform: translate3d(123px,0,0)
+    transition: transform .35s ease-in
+  #logoStar
+    fill: white
+    stroke: white
+    fill-opacity: 0
+    stroke-miterlimit: 5
+    // to be set thorugh js
+    stroke-dasharray: 300
+    stroke-dashoffset: 300
+    transition: fill .5s ease-in-out
+  #logoLetters
+    fill: white
+    fill-opacity: 0
+    transition: fill .5s ease-in-out
 
 // https://codepen.io/shshaw/pen/JDEsG
 

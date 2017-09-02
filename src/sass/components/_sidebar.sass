@@ -1,1 +1,86 @@
 // SIDEBAR
+.sidebar
+  display: flex
+  flex-direction: column
+  position: fixed
+  z-index: 10
+  top: 0
+  bottom: 0
+  left: 0
+  width: 400px
+  background: white
+  box-shadow: 0px 0px 11px 0px rgba(black, .2)
+
+  &__wrapper
+    position: relative
+    flex: 1
+    display: flex
+    flex-direction: column
+    padding: 120px 20px 0 20px
+
+  &__lang
+    text-align: center
+    font-size: 18px
+    a
+      display: inline-block
+      padding: 7px
+      font-family: 'Roboto Slab'
+      font-weight: 300
+      color: $grayColor
+      transition: color $transitionSpeed $ease
+      &.active
+        color: rgba($grayColor, .5)
+
+  &__content
+    flex: 1 0 auto
+    margin-top: auto
+    margin-bottom: auto
+    display: flex
+    flex-direction: column
+    margin: 20px 0
+    overflow-y: auto
+
+  &__category
+    flex: 1 0 auto
+    display: flex
+    flex-direction: column
+    position: relative
+    margin: auto 0
+    padding: 20px 15px 20px 45px
+    &::after
+      position: absolute
+      bottom: -0px
+      left: 0
+      right: 0
+      display: block
+      content: ' '
+      background: $grayColor
+      height: 1px
+      width: 90px
+      margin-left: auto
+      margin-right: auto
+    &:last-child
+      &::after
+        display: none
+
+  &__link
+    flex: 1 0 auto
+    margin-top: auto
+    margin-bottom: auto
+    position: relative
+    display: flex
+    align-items: baseline
+    font-size: 24px
+    color: $fontColor70
+    padding: 5px
+
+    transition: color $transitionSpeed $ease
+    .ico
+      flex: 0 0 50px
+      font-size: 16px
+      transition: all $transitionSpeed $ease
+      &-metro
+        fill: #E1141A
+        font-size: 12px
+    &:hover
+      color: $colorRed

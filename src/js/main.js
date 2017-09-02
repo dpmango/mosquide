@@ -51,15 +51,15 @@ $(document).ready(function(){
   // setSvgStroke($('#logoStar'));
 
   setTimeout(function(){
-    $('.preloader').addClass('show-letters')
+    $('body').addClass('show-letters')
   }, 4000)
 
   setTimeout(function(){
-    $('.preloader').addClass('remove-fade')
+    $('body').addClass('remove-fade')
   }, 5000)
 
   setTimeout(function(){
-    $('.preloader').addClass('remove-loader')
+    $('body').addClass('remove-loader')
   }, 6500)
 
 
@@ -239,4 +239,30 @@ $(document).ready(function(){
   $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
 
 
+});
+
+// Show preloader only once
+$(window).on('load', function () {
+  if (typeof(Storage) !== "undefined") {
+    // $('.preloader').show()
+    // Code for localStorage/sessionStorage.
+    if(localStorage.isFirstLoadComplete==="false"){
+      localStorage.setItem("isFirstLoadComplete", "true");
+    } else {
+      $('.preloader').hide();
+      $('body').addClass('no-loader')
+    }
+  } else {
+      // No Web Storage support..
+  }
+});
+
+// TEMP CODE
+$(document).ready(function(){
+  $('.js-test-loader').on('click', function(){
+    localStorage.setItem("isFirstLoadComplete", "false");
+    setTimeout(function(){
+      location.reload();
+    },300)
+  });
 });
