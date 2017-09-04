@@ -1,5 +1,5 @@
 ---
-title: Homepage title
+title: Mosguide
 bodyClass: draw-star
 ---
 extends shared/_layout
@@ -96,12 +96,69 @@ block content
           span Все
         .sidebar__filter
           .sidebar__filter-ico
-            +icon('ico-places')
-          span Достопримечательности
+            +icon('ico-restaurant')
+          span Рестораны
         .sidebar__filter
           .sidebar__filter-ico
-            +icon('ico-museum')
-          span Музеи
+            +icon('ico-bars')
+          span Бары
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-fastfood')
+          span Фастфуд
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-russian-kitchen')
+          span Русская  
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-chinease-kitchen')
+          span Китайская  
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-japan-kitchen')
+          span Японская
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-italian-kitchen')
+          span Итальянская  
+    
+    // next
+    .sidebar-panel(data-for="shopping")
+      .sidebar__back
+        +icon('ico-back-arrow')
+      .sidebar__filters
+        .sidebar__filter.active
+          .sidebar__filter-ico
+            +icon('ico-placemark')
+          span Все
+      .sidebar__filters
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-souvenir')
+          span Сувениры
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-grossery')
+          span Продукты
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-cloth')
+          span Одежда
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-jewelry')
+          span Уркашения
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-pharmacy')
+          span Аптеки
+        .sidebar__filter
+          .sidebar__filter-ico
+            +icon('ico-shopping')
+          span Торговые центры
+          
+
     // next
     .sidebar-panel.sidebar-panel--wider(data-for="info")
       .sidebar-panel__heading Важная информация

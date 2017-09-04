@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="14px" viewBox="0 0 16 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>jewelry</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="d-diamont" transform="translate(-24.000000, -10.000000)" fill="#D95E5B">
+            <g id="diamont">
+                <g id="jewelry" transform="translate(24.000000, 10.000000)">
+                    <polygon id="Shape" points="0.0829090909 4.781 7.03447273 13.4332917 3.88130909 4.781"></polygon>
+                    <polygon id="Shape" points="4.50094545 4.781 7.86036364 13.9994167 11.2858182 4.781"></polygon>
+                    <polygon id="Shape" points="8.60887273 13.6567083 15.7396364 4.781 11.9066182 4.781"></polygon>
+                    <polygon id="Shape" points="13.0196364 0.114333333 8.52276364 0.114333333 11.6061091 3.919125"></polygon>
+                    <polygon id="Shape" points="11.0818909 4.19766667 7.91127273 0.285541667 4.74094545 4.19766667"></polygon>
+                    <polygon id="Shape" points="7.30007273 0.114333333 2.8 0.114333333 4.19607273 3.94479167"></polygon>
+                    <polygon id="Shape" points="2.31534545 0.483583333 0 4.19766667 3.66865455 4.19766667"></polygon>
+                    <polygon id="Shape" points="15.8228364 4.19766667 13.5051636 0.479791667 12.1233455 4.19766667"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

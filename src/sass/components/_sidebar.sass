@@ -7,9 +7,10 @@
   top: 0
   bottom: 0
   left: 0
+  max-height: 100vh
   &__main
     position: relative
-    flex: 1
+    flex: 1 1 auto
     display: flex
     flex-direction: column
     padding: 120px 20px 0 20px
@@ -31,7 +32,7 @@
         color: rgba($grayColor, .5)
 
   &__content
-    flex: 1 0 auto
+    flex: 1 1 auto
     margin-top: auto
     margin-bottom: auto
     display: flex
@@ -117,6 +118,45 @@
       align-items: center
       justify-content: center
       transition: all $transitionSpeed $ease
+      .ico-placemark
+        font-size: 15px
+      .ico-places
+        font-size: 15px
+      .ico-museum
+        font-size: 14px
+      .ico-parks
+        font-size: 16px
+      .ico-memorial
+        font-size: 16px
+      .ico-entertainment
+        font-size: 11px
+      .ico-restaurant
+        font-size: 12px
+      .ico-bars
+        font-size: 14px
+      .ico-fastfood
+        font-size: 14px
+      .ico-russian-kitchen
+        font-size: 13px
+      .ico-chinease-kitchen
+        font-size: 14px
+      .ico-japan-kitchen
+        font-size: 13px
+      .ico-italian-kitchen
+        font-size: 17px
+      .ico-souvenir
+        font-size: 17px
+      .ico-grossery
+        font-size: 15px
+      .ico-cloth
+        font-size: 14px
+      .ico-jewelry
+        font-size: 14px
+      .ico-pharmacy
+        font-size: 14px
+      .ico-shopping
+        font-size: 15px
+
     span
       display: inline-block
       font-size: 10px
@@ -157,13 +197,13 @@
   transform: translate3d(-100%,0,0)
   pointer-events: none
   visibility: hidden
+  overflow-y: auto
   transition: transform $transitionSpeed $ease, box-shadow $transitionSpeed $ease, opacity 0s $ease
   &--wider
     width: 375px
     padding: 20px 40px
   &--full
     display: block
-    overflow-y: scroll
     width: calc(100% - 400px)
   &.active
     visibility: visible
