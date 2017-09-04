@@ -70,7 +70,7 @@ $(document).ready(function(){
   });
 
   // sidebar pannel toggler
-  $('.sidebar__link').on('click', function(){
+  $('[data-panel]').on('click', function(){
     var panel = $(this).data('panel');
     if( $('.sidebar-panel[data-for='+panel+']').length > 0 ){
       $('.sidebar__link').removeClass('active')
@@ -100,9 +100,9 @@ $(document).ready(function(){
   // SLIDERS
   //////////
 
-  $('.trending__wrapper').slick({
-    autoplay: true,
-    dots: false,
+  $('.point-card__slider').slick({
+    autoplay: false,
+    dots: true,
     arrows: false,
     infinite: true,
     speed: 300,
@@ -110,46 +110,6 @@ $(document).ready(function(){
     centerMode: true,
     variableWidth: true
   });
-
-  // handle outside click
-  $(document).click(function (e) {
-    var container = new Array();
-    container.push($('.ui-select'));
-
-    $.each(container, function(key, value) {
-        if (!$(value).is(e.target) && $(value).has(e.target).length === 0) {
-            $(value).removeClass('active');
-        }
-    });
-  });
-
-  // numeric input
-  $('.ui-number span').on('click', function(e){
-    var element = $(this).parent().find('input');
-    var currentValue = parseInt($(this).parent().find('input').val()) || 0;
-
-    if( $(this).data('action') == 'minus' ){
-      if(currentValue <= 1){
-        return false;
-      }else{
-        element.val( currentValue - 1 );
-      }
-    } else if( $(this).data('action') == 'plus' ){
-      if(currentValue >= 99){
-        return false;
-      } else{
-        element.val( currentValue + 1 );
-      }
-    }
-  });
-
-
-  // Masked input
-  $(".js-dateMask").mask("99.99.9999",{placeholder:"__ __ ____"});
-  $(".js-dateMask2").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
-  $(".js-indexMask").mask("999 999",{placeholder:"000 000"});
-  $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
-
 
   // panzoom
   $(".panzoom").panzoom({

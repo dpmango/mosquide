@@ -7,7 +7,8 @@ block content
   
   // TEMP
   .temp
-    .js-test-loader Test Preloader
+    .temp__btn.js-test-loader Test Preloader
+    .temp__btn(data-panel='open-info') Open info
       
   // PRELOADER
   .preloader
@@ -191,8 +192,73 @@ block content
           button.js-reset 0
 
         .metro__svg.panzoom
-          // <img src="http://blog.millermedeiros.com/wp-content/uploads/2010/04/awesome_tiger.svg" width="900" height="900"/>
           include metro.svg
+
+    // next
+    .sidebar-panel.sidebar-panel--card(data-for="open-info")
+      .point-card
+        .point-card__slider
+          .point-card__slide
+            img(src='img/pointCard.jpg' srcset='img/pointCard@2x.jpg 2x')
+          .point-card__slide
+            img(src='img/pointCard.jpg' srcset='img/pointCard@2x.jpg 2x')
+          .point-card__slide
+            img(src='img/pointCard.jpg' srcset='img/pointCard@2x.jpg 2x')
+        .point-card__scope
+          .point-card__name Собор Василия Блаженного на Красной Площади
+          .point-card__type Храм
+        .point-card__content
+          .point-card-row
+            .point-card-row__ico
+              +icon('ico-adress')
+            .point-card-row__content
+              .point-card-row__heading Адрес
+              .point-card-row__text Красная площадь, д. 7
+          .point-card-row
+            .point-card-row__ico
+              +icon('ico-metro')
+            .point-card-row__content
+              .point-card-row__heading Метро
+              .point-card-row__text 
+                .point-card-row__metro.point-card-row__metro--blue
+                  span Площадь Революции 
+                .point-card-row__metro.point-card-row__metro--red
+                  span Охотный Ряд 
+                .point-card-row__metro.point-card-row__metro--orange
+                  span Китай-город 
+          .point-card-row
+            .point-card-row__ico
+              +icon('ico-clock')
+            .point-card-row__content
+              .point-card-row__heading Время работы
+              .point-card-row__text Ежедневно, 11:00–17:30
+          .point-card-row
+            .point-card-row__ico
+              +icon('ico-info')
+            .point-card-row__content
+              .point-card-row__heading Сайт
+              .point-card-row__text
+                a(href='#' target="_blank") saintbasil.ru
+          .point-card-row
+            .point-card-row__ico
+              +icon('ico-phone')
+            .point-card-row__content
+              .point-card-row__heading Телефон
+              .point-card-row__text
+                a(href='tel:+7 495 698‑33-04') +7 495 698‑33-04
+          .point-card-row
+            .point-card-row__ico
+              +icon('ico-distance')
+            .point-card-row__content
+              .point-card-row__heading Показать на карте
+              .point-card-row__text
+                a(href='tel:+7 495 698‑33-04') 567m
+          .point-card__description
+            p Собор Василия Блаженного — православный храм на Красной площади в Москве, широко известный памятник русской архитектуры. До XVII века назывался Троицким, так как первоначальный деревянный храм был посвящён Святой Троице. Был также известен как «Иерусалимский», что связано как с посвящением одного из его приделов, так и с совершавшимся в Вербное воскресенье крестным ходом к нему из Успенского собора Кремля с «шествием на осляти» Патриарха.
+            p В настоящее время Покровский собор — филиал Государственного исторического музея. Входит в список объектов Всемирного наследия ЮНЕСКО в России.
+            p Покровский собор — одна из самых известных достопримечательностей России. Для многих он является символом Москвы и России. К собору в 1931 году[1] передвинули бронзовый памятник Кузьме Минину и Дмитрию Пожарскому, который стоит на Красной площади с 1818 года.
+              
+    // GOOGLE MAP
     .map
       script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAc-HQqbjl4xbBI-ep3pMskf9ic-lyMb70')
       #google-map
