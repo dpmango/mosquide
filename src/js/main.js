@@ -101,14 +101,14 @@ $(document).ready(function(){
   //////////
 
   $('.point-card__slider').slick({
-    autoplay: false,
+    autoplay: true,
+    autoplaySpeed: 4000,
     dots: true,
     arrows: false,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
-    centerMode: true,
-    variableWidth: true
+    fade: true
   });
 
   // panzoom
