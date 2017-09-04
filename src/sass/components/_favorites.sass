@@ -1,0 +1,67 @@
+.favorites
+  width: 100%
+  flex: 0 1 auto
+  display: flex
+  flex-direction: column
+  padding: 25px
+  padding-bottom: 20px
+.favorite-card
+  flex: 0 0 auto
+  border-radius: 10px
+  padding: 12px
+  box-shadow: 0px 0px 7px rgba(black, .2)
+  display: flex
+  margin-bottom: 8px
+  &:last-child
+    margin-bottom: 0
+  &__image
+    position: relative
+    z-index: 1
+    flex: 0 0 100px
+    border-radius: 8px
+    overflow: hidden
+    img
+      max-width: 100%
+  &__content
+    position: relative
+    flex: 1 1 auto
+    display: flex
+    flex-direction: column
+    padding-left: 15px
+  &__name
+    font-size: 15px
+    margin-right: 20px
+    font-weight: 700
+    line-height: 1.1
+    color: $fontColor80
+  &__type
+    margin-top: 4px
+    font-size: 10px
+    color: $fontColor50
+  &__location
+    display: flex
+    justify-content: space-between
+    font-size: 10px
+    margin-top: auto
+    padding-top: 10px
+    padding-bottom: 5px
+    color: $fontColor80
+  &__place
+    .ico
+      font-size: 7px
+      margin-right: 10px
+    span
+      display: inline-block
+  &__distance
+    flex: 0 0 auto
+    padding-left: 10px
+    margin-left: auto
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    color: $fontColor70
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &:hover
+      color: $colorRed
