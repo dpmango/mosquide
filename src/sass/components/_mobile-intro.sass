@@ -1,0 +1,44 @@
+// MOBILE INTRO
+.mobile-intro
+  display: flex
+  flex-direction: column
+  position: fixed 0
+  z-index: 100
+  padding-top: 120px
+  background: white
+  opacity: 1
+  pointer-events: all
+  overflow-y: scroll
+  transition: opacity .4s ease
+  &__wrapper
+    margin: auto
+    max-width: 270px
+    position: relative
+    text-align: center
+    transition: transform .25s ease-in-out
+  &__title
+    font-size: 32px
+    line-height: 1.25
+    font-weight: 700
+  &__description
+    font-size: 16px
+    line-height: 1.2
+    color: $fontColor60
+    margin-top: 20px
+  &__btns
+    margin-top: 70px
+    .btn
+      margin-bottom: 15px
+      &:last-child
+        margin-bottom: 0
+
+.enter-mobile
+  .mobile-intro
+    opacity: 0
+    pointer-events: none
+    &__wrapper
+      transform: scale(.5)
+
++r-from($tablet)
+  .mobile-intro
+    display: none !important

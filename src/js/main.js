@@ -24,6 +24,11 @@ $(document).ready(function(){
     }
   }
 
+  var media = {
+    wide: 1200,
+    tablet: 768
+  }
+
   //////////
   // COMMON
   //////////
@@ -171,6 +176,21 @@ $(document).ready(function(){
     onEnd: undefined,
     onReset: undefined
   }).panzoom("zoom");
+
+  // MOBILE
+  $('.js-enter-mobile').on('click', function(){
+    $('body').addClass('enter-mobile')
+  })
+
+  function triggerMobileLogo(){
+    if ( _window.width() < media.tablet ){
+
+    }
+  }
+  _window.resized(25, function(){
+    triggerMobileLogo()
+  });
+  triggerMobileLogo();
 
 });
 

@@ -125,6 +125,19 @@
     fill-opacity: 0
     transition: fill .5s ease-in-out
 
++r($tablet)
+  .no-loader .logo
+    top: 50px
+    left: 50%
+    transform: translateX(-50%)
+    margin-left: 120px
+    #logoLetters
+      fill-opacity: 0
+  .enter-mobile
+    .logo
+      opacity: 0
+      pointer-events: none
+
 // https://codepen.io/shshaw/pen/JDEsG
 
 @keyframes DrawLine

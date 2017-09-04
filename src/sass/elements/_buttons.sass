@@ -1,0 +1,24 @@
+// buttons
+.btn
+  display: inline-block
+  -webkit-apperance: none
+  transition: all $transitionSpeed $ease
+  &--primary
+    background: linear-gradient(45deg, #F25F5C, #9E4F4C)
+    padding: 8px 25px
+    min-width: 205px
+    font-size: 16px
+    color: white
+    border-radius: 50px
+    &:hover
+      background: linear-gradient(45deg, #9E4F4C, #F25F5C)
+  &--ghost
+    font-size: 16px
+    padding: 8px 25px
+    border: 1px solid $fontColor70
+    border-radius: 50px
+    min-width: 205px
+    &:hover
+      color: white
+      background: linear-gradient(45deg, #F25F5C, #9E4F4C)
+      border-color: transparent
