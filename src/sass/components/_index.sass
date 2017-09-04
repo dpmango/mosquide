@@ -153,6 +153,7 @@
     font-size: 10px
     color: rgba(white, .7)
   &__content
+    position: relative
     padding: 8px 30px 20px 35px
   &-row
     display: flex
@@ -242,10 +243,11 @@
       color: $fontColor80
 
 .favorites
+  width: 100%
   flex: 0 1 auto
   display: flex
   flex-direction: column
-  margin: 25px
+  padding: 25px
   padding-bottom: 20px
 .favorite-card
   flex: 0 0 auto
@@ -265,13 +267,14 @@
     img
       max-width: 100%
   &__content
+    position: relative
     flex: 1 1 auto
     display: flex
     flex-direction: column
     padding-left: 15px
   &__name
     font-size: 15px
-    margin-right: 15px
+    margin-right: 20px
     font-weight: 700
     line-height: 1.1
     color: $fontColor80
@@ -297,7 +300,15 @@
     flex: 0 0 auto
     padding-left: 10px
     margin-left: auto
-
+  &__close
+    position: absolute
+    top: 0
+    right: 0
+    color: $fontColor70
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &:hover
+      color: $colorRed
 
 // TEMP
 .temp

@@ -192,10 +192,19 @@ $(window).on('load', function () {
 
 // TEMP CODE
 $(document).ready(function(){
+
+  // reload preloader
   $('.js-test-loader').on('click', function(){
     localStorage.setItem("isFirstLoadComplete", "false");
     setTimeout(function(){
       location.reload();
     },300)
   });
+
+  // close favorites
+  $('.favorite-card__close').on('click', function(){
+    $(this).closest('.favorite-card').fadeOut();
+    // callback
+  })
+
 });
