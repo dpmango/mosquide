@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="11px" viewBox="0 0 19 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>checkmark</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icons" transform="translate(-605.000000, -846.000000)" fill="#D95E5B">
+            <g id="Filter-active" transform="translate(605.000000, 846.000000)">
+                <g id="back_arrow" transform="translate(9.500000, 5.500000) rotate(-90.000000) translate(-9.500000, -5.500000) translate(4.000000, -4.000000)">
+                    <g id="chevron-left">
+                        <g>
+                            <path d="M10.4374444,0.507659716 C11.1589416,1.20598929 11.2155614,2.17820501 10.4374444,3.03189689 L4.37589695,9.2912363 L10.4374444,15.5505757 C11.2155614,16.4042676 11.1589416,17.378085 10.4374444,18.0716095 C9.71756486,18.7699391 8.50104933,18.7250922 7.82484788,18.0716095 C7.14864643,17.4213302 0.541931784,10.5517532 0.541931784,10.5517532 C0.181183164,10.2041901 0,9.7477132 0,9.2912363 C0,8.83475939 0.181183164,8.37828249 0.541931784,8.02751603 C0.541931784,8.02751603 7.14864643,1.16114244 7.82484788,0.507659716 C8.50104933,-0.147424679 9.71756486,-0.190669859 10.4374444,0.507659716 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

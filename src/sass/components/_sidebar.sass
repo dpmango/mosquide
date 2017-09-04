@@ -75,13 +75,19 @@
     padding: 5px
     cursor: pointer
     transition: color $transitionSpeed $ease
-    .ico:first-child
+    .ico
       flex: 0 0 50px
       font-size: 16px
       transition: all $transitionSpeed $ease
+      &-places
+        font-size: 18px
+      &-shopping
+        font-size: 17px
       &-metro
         fill: #E1141A
         font-size: 12px
+      &-heart
+        font-size: 18px
     span
       display: inline-block
     .ico:last-child
@@ -96,7 +102,7 @@
         transform: translate3d(15px,0,0)
 
   &__filters
-    flex: 0 0 auto
+    flex: 0 1 auto
     margin: 0 20px auto 20px
     display: flex
     flex-direction: column
@@ -172,10 +178,12 @@
       span
         color: $colorRed
   &__back
+    flex: 0 0 auto
     font-size: 19px
     padding: 10px
     cursor: pointer
     margin-top: auto
+    padding-top: 20px
     margin-bottom: 50px
     &:hover
       .ico
@@ -190,6 +198,7 @@
   z-index: 8
   top: 0
   bottom: 0
+  height: 100vh
   left: 400px
   width: 170px
   background: white
@@ -204,6 +213,8 @@
     padding: 20px 40px
   &--card
     width: 375px
+    .sidebar-panel__heading
+      padding-top: 20px
   &--full
     display: block
     width: calc(100% - 400px)
@@ -213,8 +224,10 @@
     transform: translate3d(0,0,0)
     box-shadow: 0px 0px 11px 0px rgba(black, .2)
   &__heading
+    flex: 0 0 auto
     font-size: 24px
     font-weight: 700
+    text-align: center
 
 +r($wide)
   .sidebar
