@@ -18,6 +18,17 @@
     background: white
     box-shadow: 0px 0px 11px 0px rgba(black, .2)
 
+  &__action
+    display: none
+    size: 56px
+    align-items: center
+    justify-content: center
+    border-radius: 50%
+    box-shadow: 0px 0px 3px rgba(black, .3)
+    margin-left: 10px
+    margin-right: 20px
+    margin-bottom: 7px
+
   &__lang
     text-align: center
     font-size: 18px
@@ -211,10 +222,12 @@
   &--wider
     width: 375px
     padding: 20px 40px
-  &--card
+  &--fav
     width: 375px
     .sidebar-panel__heading
       padding-top: 20px
+  &--card
+    width: 375px
   &--full
     display: block
     width: calc(100% - 400px)
@@ -250,7 +263,7 @@
     width: 140px
     &--wider
       width: 375px
-    &--card
+    &--card, &--fav
       width: 375px
     &--full
       width: calc(100% - 320px)
@@ -260,19 +273,35 @@
     flex-direction: row
     top: auto
     right: 0
-    height: 52px
+    height: 63px
     &__main
+      flex-direction: row
+      align-items: flex-end
       padding: 0
       width: 100%
       box-shadow: none
+      background: transparent
+    &__action
+      position: absolute
+      bottom: 0
+      left: 0
+      z-index: 3
+      display: flex
+      background: white
     &__lang
       display: none
     &__content
       flex-direction: row
       margin: 0
+      padding-left: 100px
       overflow-y: hidden
       overflow-x: scroll
+      height: 52px
+      background: rgba(white, .9)
+      backdrop-filter: blur(3px)
+      box-shadow: 0px 0px 4px rgba(black, .2)
     &__category
+      flex: 1 0 auto
       padding: 0
       flex-direction: row
       &::after
@@ -281,9 +310,58 @@
       flex-direction: column
       font-size: 10px
       align-items: center
+      text-align: center
       .ico
         flex: 0 0 25px
       span
         margin-top: 3px
       .ico:last-child
         display: none
+
+  .sidebar-panel
+    flex-direction: row
+    top: auto
+    left: 0
+    right: 0
+    width: auto
+    height: 147px
+    padding: 20px 10px 63px 10px
+    background: rgba(white, .8)
+    backdrop-filter: blur(6px)
+    overflow-x: auto
+    overflow-y: hidden
+    transform: translate3d(0%,100%,0)
+    &--wider
+      flex-direction: column
+      width: auto
+      height: 100vh
+    &--card
+      flex-direction: column
+      width: auto
+      height: 100vh
+    &--fav
+      padding: 0
+      height: auto
+      flex-direction: row
+      background: transparent
+      backdrop-filter: none
+      &.active
+        box-shadow: none
+      .sidebar-panel__heading
+        display: none
+    &--full
+      padding: 0 0 63px 0
+      width: auto
+      height: 100vh
+
+  .sidebar
+    &__filters
+      flex: 1 0 auto
+      margin: 0
+      flex-direction: row
+    &__back
+      display: none
+    &__filter
+      flex: 0 0 auto
+      margin-left: auto
+      margin-right: auto

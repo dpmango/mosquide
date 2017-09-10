@@ -35,6 +35,8 @@ block content
   .content
     .sidebar
       .sidebar__main
+        .sidebar__action
+          +icon('ico-filter')
         .sidebar__lang
           a(href="#") Ru
           a(href="#").active En
@@ -59,7 +61,7 @@ block content
               span Metro map
             a.sidebar__link(data-panel='info')
               +icon('ico-info')
-              span Important information
+              span <span class="hidden-tablet">Important</span> information
               // next category
           .sidebar__category
             a.sidebar__link(data-panel='favorites')
@@ -204,7 +206,7 @@ block content
           include metro.svg
 
     // next
-    .sidebar-panel.sidebar-panel--card(data-for="favorites")
+    .sidebar-panel.sidebar-panel--fav(data-for="favorites")
       .sidebar-panel__heading Избранное
       .favorites
         .favorite-card

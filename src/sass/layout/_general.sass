@@ -44,6 +44,12 @@ body, html
 
 +r($tablet)
   .content
-    height: calc(100vh - 52px)
+    height: calc(100vh - 2px)
   .map
     margin-left: 0
+
+
+.hidden-tablet
+  display: inline-block
+  +r($tablet)
+    display: none !important

@@ -54,3 +54,16 @@
     color: #424242
   & + .info-text
     margin-top: 0
+
++r($tablet)
+  .info-container
+    height: calc(100vh - 100px)
+    padding: 0px 10px
+    overflow-y: scroll
+  .info
+    width: 300px
+    margin-left: auto
+    margin-right: auto
+    &__right
+      flex-grow: 1
+      flex-shrink: 1
