@@ -40,5 +40,34 @@
       transform: scale(.5)
 
 +r-from($tablet)
-  .mobile-intro
+  .mobile-intro, .mobile-view
     display: none !important
+
+
+.mobile-view
+  display: flex
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  top: 50px
+  z-index: 9
+  border: 1px solid #E6E6E6
+  border-radius: 30px
+  &__btn
+    min-width: 86px
+    padding: 4px 10px
+    border-radius: 30px
+    margin-right: 5px
+    text-align: center
+    font-size: 10px
+    font-weight: 700
+    cursor: pointer
+    transition: all $transitionSpeed $ease
+    &:last-child
+      margin-right: 0
+    &:hover
+      color: white
+      background: $fontColor50
+    &.active
+      color: white
+      background: $fontColor70

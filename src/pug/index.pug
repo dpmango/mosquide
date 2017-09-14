@@ -30,6 +30,12 @@ block content
       .mobile-intro__btns
         a(href='#' target="_blank").btn.btn--primary Скачать карту
         a(href='#').btn.btn--ghost.js-enter-mobile Нет, спасибо
+  
+  // MOBILE VIEW
+  .mobile-view
+    .mobile-view__btn.active(data-action="map") Карта
+    .mobile-view__btn(data-action="list") Список
+    
     
   // CONTENT
   .content
@@ -208,7 +214,7 @@ block content
     // next
     .sidebar-panel.sidebar-panel--fav(data-for="favorites")
       .sidebar-panel__heading Избранное
-      .favorites
+      .favorites.js-favorites
         .favorite-card
           .favorite-card__image
             img(src='img/favCard_1.jpg' srcset='img/favCard_1@2x.jpg 2x')
@@ -283,6 +289,7 @@ block content
             .favorite-card__close
               +icon('ico-close')
 
+    // next
     .sidebar-panel.sidebar-panel--card(data-for="open-info")
       .point-card
         .point-card__slider
@@ -345,7 +352,84 @@ block content
             p Собор Василия Блаженного — православный храм на Красной площади в Москве, широко известный памятник русской архитектуры. До XVII века назывался Троицким, так как первоначальный деревянный храм был посвящён Святой Троице. Был также известен как «Иерусалимский», что связано как с посвящением одного из его приделов, так и с совершавшимся в Вербное воскресенье крестным ходом к нему из Успенского собора Кремля с «шествием на осляти» Патриарха.
             p В настоящее время Покровский собор — филиал Государственного исторического музея. Входит в список объектов Всемирного наследия ЮНЕСКО в России.
             p Покровский собор — одна из самых известных достопримечательностей России. Для многих он является символом Москвы и России. К собору в 1931 году[1] передвинули бронзовый памятник Кузьме Минину и Дмитрию Пожарскому, который стоит на Красной площади с 1818 года.
+    
+    // next
+    .sidebar-panel.sidebar-panel--moblist(data-for="mobile-list")
+      .favorites
+        .favorite-card
+          .favorite-card__image
+            img(src='img/favCard_1.jpg' srcset='img/favCard_1@2x.jpg 2x')
+          .favorite-card__content
+            .favorite-card__name Собор Василия Блаженного на Красной Площади
+            .favorite-card__type Собор
+            .favorite-card__location
+              .favorite-card__place
+                +icon('ico-adress')
+                span пл. Красная, 7 
+              .favorite-card__distance 567m
+            .favorite-card__close
+              +icon('ico-close')
+          
+        // card
+        .favorite-card
+          .favorite-card__image
+            img(src='img/favCard_2.jpg' srcset='img/favCard_2@2x.jpg 2x')
+          .favorite-card__content
+            .favorite-card__name ГУМ
+            .favorite-card__type Торговый центр
+            .favorite-card__location
+              .favorite-card__place
+                +icon('ico-adress')
+                span пл. Красная, 7 
+              .favorite-card__distance 567m
+            .favorite-card__close
+              +icon('ico-close')
+        
+        // card
+        .favorite-card
+          .favorite-card__image
+            img(src='img/favCard_4.jpg' srcset='img/favCard_4@2x.jpg 2x')
+          .favorite-card__content
+            .favorite-card__name Пушкинская площадь
+            .favorite-card__type Памятник
+            .favorite-card__location
+              .favorite-card__place
+                +icon('ico-adress')
+                span пл. Красная, 7 
+              .favorite-card__distance 567m
+            .favorite-card__close
+              +icon('ico-close')
               
+        // card
+        .favorite-card
+          .favorite-card__image
+            img(src='img/favCard_3.jpg' srcset='img/favCard_3@2x.jpg 2x')
+          .favorite-card__content
+            .favorite-card__name Московский  исторический музей
+            .favorite-card__type Собор
+            .favorite-card__location
+              .favorite-card__place
+                +icon('ico-adress')
+                span пл. Красная, 7 
+              .favorite-card__distance 567m
+            .favorite-card__close
+              +icon('ico-close')
+                    
+        // card
+        .favorite-card
+          .favorite-card__image
+            img(src='img/favCard_2.jpg' srcset='img/favCard_2@2x.jpg 2x')
+          .favorite-card__content
+            .favorite-card__name ГУМ
+            .favorite-card__type Торговый центр
+            .favorite-card__location
+              .favorite-card__place
+                +icon('ico-adress')
+                span пл. Красная, 7 
+              .favorite-card__distance 567m
+            .favorite-card__close
+              +icon('ico-close')
+                      
     // GOOGLE MAP
     .map
       script(type='text/javascript', src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAc-HQqbjl4xbBI-ep3pMskf9ic-lyMb70')

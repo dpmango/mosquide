@@ -65,19 +65,22 @@ $(document).ready(function(){
     if( $('.sidebar-panel[data-for='+panel+']').length > 0 ){
       $('.sidebar__link').removeClass('active')
       $(this).toggleClass('active');
-      $('.sidebar-panel').removeClass('active');
-      $('.sidebar-panel[data-for='+panel+']').toggleClass('active');
-      window.location.hash = panel
+      openPanel(panel);
     }
   });
+
+  function openPanel(panel){
+    $('.sidebar-panel').removeClass('active');
+    $('.sidebar-panel[data-for='+panel+']').toggleClass('active');
+    window.location.hash = panel
+  }
 
   // hash nav
   if(window.location.hash) {
     var hash = window.location.hash.substring(1);
     $('.sidebar__link').removeClass('active')
     $('.sidebar__link[data-panel='+hash+']').addClass('active');
-    $('.sidebar-panel').removeClass('active');
-    $('.sidebar-panel[data-for='+hash+']').toggleClass('active');
+    openPanel(hash);
   }
 
   $('.sidebar__back').on('click', function(){
@@ -101,7 +104,7 @@ $(document).ready(function(){
     fade: true
   });
 
-  var _favoritesSlickMobile = $('.favorites');
+  var _favoritesSlickMobile = $('.js-favorites');
   var favoritesSlickMobileOptions = {
     arrows: false,
     dots: false,
@@ -205,6 +208,20 @@ $(document).ready(function(){
     triggerMobileLogo()
   });
   triggerMobileLogo();
+
+  // mobile list switcher
+  $('.mobile-view__btn').on('click', function(){
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+    var actionType = $(this).data('action');
+
+    if ( actionType == "list"){
+      openPanel("mobile-list");
+    } else if ( actionType == "map" ){
+      $('.sidebar-panel[data-for="mobile-list"]').removeClass('active');
+      window.location.hash = ""
+    }
+  })
 
 });
 
